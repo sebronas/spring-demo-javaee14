@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 //@RestController creates new Spring bean base on the class
@@ -45,7 +46,7 @@ public class MyFirstRestController {
     // q=Latvia, q: parameter name, Latvia i value for q parameter
     // & is used if more parameters are coming
 
-    // /greeting?name=Kristaps&surname=Sebris
+    // /greeting?firstName=Kristaps&surname=Sebris
     @PostMapping("/say-bye")
     public String bye(){
         log.info("byee method was called..");
@@ -54,9 +55,12 @@ public class MyFirstRestController {
     }
 
     @GetMapping("/greeting")
-    public String greetUser(String name, String surname) {
-        log.info("greetUser called with params: name: [{}], surname[{}]", name, surname); //  == String.format("...");
+    public String greetUser(@RequestParam(value = "name", defaultValue = "Janis") String firstName,
+                            @RequestParam(value = "surname", defaultValue = "Berzins") String surname) {
+        log.info("greetUser called with params: name: [{}], surname[{}]", firstName, surname); //  == String.format("...");
 
-        return greetingService.makeSomeGreetingToUser(name + " " + surname);
+        return greetingService.makeSomeGreetingToUser(firstName + " " + surname);
     }
+
+
 }
