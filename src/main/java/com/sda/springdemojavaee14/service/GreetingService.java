@@ -10,7 +10,7 @@ public class GreetingService {
 
 
     public String makeSomeGreetingToUser(String name) {
-        String result = "Welcome to Spring class" + name;
+        String result = "Welcome to Spring class " + name;
 
         log.info(result); // thanks of @Slf4j, we can just use this from MyFirstRestController.java file
         return result;

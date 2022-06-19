@@ -36,6 +36,16 @@ public class MyFirstRestController {
         return "Welcome to spring class ";
     }
 
+    // example query link from google:
+    // https://www.google.com/search?q=Latvia
+
+    // server: https://www.google.com
+    // /search: application (endpoint) on the server
+    // ? : query seperator
+    // q=Latvia, q: parameter name, Latvia i value for q parameter
+    // & is used if more parameters are coming
+
+    // /greeting?name=Kristaps&surname=Sebris
     @PostMapping("/say-bye")
     public String bye(){
         log.info("byee method was called..");
@@ -44,9 +54,9 @@ public class MyFirstRestController {
     }
 
     @GetMapping("/greeting")
-    public String greetUser() {
-        log.info("greetUser");
+    public String greetUser(String name, String surname) {
+        log.info("greetUser called with params: name: [{}], surname[{}]", name, surname); //  == String.format("...");
 
-        return greetingService.makeSomeGreetingToUser("Kristaps");
+        return greetingService.makeSomeGreetingToUser(name + " " + surname);
     }
 }
