@@ -5,7 +5,7 @@
 
 ### Application architecture with MVC
 * View
-* [Controller](https://github.com/sebronas/spring-demo-javaee14/tree/master/src/main/java/com/sda/springdemojavaee14/controller/rest/ReservationRestController.java)
+* Controller
 * Model (service + Repository)
 
 ### Application architecture with MVC - second view
