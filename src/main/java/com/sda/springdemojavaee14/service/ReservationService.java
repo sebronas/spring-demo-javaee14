@@ -5,7 +5,6 @@ import com.sda.springdemojavaee14.repository.ReservationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -20,7 +19,6 @@ public class ReservationService {
 
     public List<Reservation> findAllReservations() {
         log.info("finding all reservations (Service)");
-        log.warn("aAAAAAAAAAAAAAAAAAAAAAAAA");
 
         return reservationRepository.findAllReservationInRepository();
     }
