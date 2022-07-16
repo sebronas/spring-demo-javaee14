@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -23,9 +24,13 @@ public class ReservationService {
         return reservationRepository.findAll();
     }
 
-    /*public Reservation findReservationById(Long reservationId) {
-
-        return reservationRepository.findById();
-    }*/
+    public Reservation findReservationById(Long reservationId) {
+        log.info("finding reservation by id: [{}]", reservationId);
+        //Optional<Reservation> reservationFromDb = reservationRepository.findById(reservationId);
+        // var is just for less typing and replaces all type name - the same as above line;
+        // if you use ar provide good name - always try to provide good name
+        var reservationFromDb = reservationRepository.findById(reservationId);
+        return reservationFromDb.orElse(null);
+    }
 
 }
