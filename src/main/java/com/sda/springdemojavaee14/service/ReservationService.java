@@ -23,9 +23,9 @@ public class ReservationService {
         return reservationRepository.findAll();
     }
 
-    public Reservation findReservationById(Long reservationId) {
+    /*public Reservation findReservationById(Long reservationId) {
 
         return reservationRepository.findById();
-    }
+    }*/
 
 }

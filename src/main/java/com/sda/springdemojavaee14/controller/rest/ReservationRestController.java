@@ -29,10 +29,10 @@ public class ReservationRestController {
         return reservationService.findAllReservations();
     }
 
-    @GetMapping("/reservations/{id}")
+   /* @GetMapping("/reservations/{id}")
                                   //@PathVariable("id") get id value from url and use for reservationId
     public Reservation getReservationById(@PathVariable("id") Long reservationId) {
         log.info("trying to find reservation by id: [{}]", reservationId);
         return reservationService.findReservationById(reservationId);
-    }
+    }*/
 }
