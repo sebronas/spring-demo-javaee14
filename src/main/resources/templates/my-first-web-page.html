@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Page</title>
+</head>
+<body>
+    <h1> Welcome to my page</h1>
+    <p>This is my first spring page</p>
+    <p>Welcome Ilze!!!</p>
+
+    <!-- th:text replaces InnerHTML with new value -->
+    <p>Welcome <span th:text="Kristaps">Peeter</span></p>
+
+    <!-- replacing name from MyFirstWebController.java -->
+    <p>Welcome <span th:text="${name}">Peeter</span></p>
+
+</body>
+</html>
