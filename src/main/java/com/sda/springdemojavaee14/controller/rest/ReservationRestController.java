@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -29,7 +30,9 @@ public class ReservationRestController {
     @GetMapping("/reservations")
     public List<Reservation> getAllReservations() {
         log.info("getting all reservations (Controller)");
-
+        /*if (true) {
+            throw new NullPointerException("Braking the server??");
+        }*/
         return reservationService.findAllReservations();
     }
 
@@ -50,12 +53,22 @@ public class ReservationRestController {
         if (responseBody != null) {
             return ResponseEntity.ok(responseBody);
         } else {
+            // https://danielmiessler.com/images/url-urn-uri-structure-2022.png
+
+            String path = "/api/reservations/"+reservationId;
+            try {
+                //TODO: Fix server url
+                URI uri = new URI("/api/reservations/"+reservationId);
+                path = uri.toString();
+            } catch (URISyntaxException e) {
+                log.warn("Problems with creating URI", e);
+            }
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
                     GenericError.builder()
                             .responseCode(404)
                             .timestamp(LocalDateTime.now())
                             .errorMessage("You provided wrong id: " + reservationId)
-                            .path("/reservations/"+reservationId) // TODO: use URI class
+                            .path(path)
                             .build()
             );
         }
