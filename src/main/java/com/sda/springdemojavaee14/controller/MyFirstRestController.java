@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 //@RestController creates new Spring bean base on the class
 // bean = component = managed object (object created bt Spring for us)
-//TODO: install postman :P
+
 @RestController
 public class MyFirstRestController {
 
@@ -30,7 +30,6 @@ public class MyFirstRestController {
 
     @GetMapping("/say-hello")
     public String hello(){
-        // TODO: explain logger level
         log.info("hello method was called..");
 
         return "Welcome to spring class ";
