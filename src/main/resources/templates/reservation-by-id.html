@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <p> Reservation number: <span th:text="${reservation.getId()}"></span></p>
+    <p> Table number: <span th:text="${reservation.getPhoneNumber()}"></span></p>
+    <p> Table email: <span th:text="${reservation.getEmail()}"></span></p>
+    <p>Start Booking Time: <span th:text="${reservation.getStartBookingTime()}"></span></p>
+    <p>End Booking Time: <span th:text="${reservation.getEndBookingTime()}"></span> </p>
+    <p>///////////////////////////////////</p>
+    <p>Id: <span th:text="${reservation.id}">100</span></p>
+    <p>Table Number: <span th:text="${reservation.tableNumber}">111111</span></p>
+    <p>StartBookingTime: <span th:text="${reservation.startBookingTime}">12/02/2022</span></p>
+    <p>EndBookingTime: <span th:text="${reservation.endBookingTime}">12/02/2022</span></p>
+    <p>Surname: <span th:text="${reservation.surname}">Najafi</span></p>
+    <p>PhoneNumber: <span th:text="${reservation.phoneNumber}">37288888</span></p>
+    <p>Email: <span th:text="${reservation.email}">p.najadi@gmail.com</span></p>
+    <p>NumberOfPeople: <span th:text="${reservation.numberOfPeople}">10</span></p>
+    <p>Address: <span th:text="${reservation.address}">Estonia,Tallinn</span></p>
+</body>
+</html>
