@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Reservations</title>
 </head>
 <body>
-
-
+    <h1>All Reservations</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Surname</td>
+                <td>Show details</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- for (var one: reservations) {} -->
+            <tr th:each="one : ${reservations}">
+                <td><span th:text="${one.id}"></span></td>
+                <td><span th:text="${one.surname}"></span></td>
+                <td><a href="#">Details</a></td>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
