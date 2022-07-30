@@ -21,7 +21,7 @@
             <tr th:each="one : ${reservations}">
                 <td><span th:text="${one.id}"></span></td>
                 <td><span th:text="${one.surname}"></span></td>
-                <td><a href="#">Details</a></td>
+                <td><a href="#" th:href="@{'/web/reservations/'+${one.id}}">Details</a></td>
                 <td><a href="#">Edit</a></td>
                 <td><a href="#">Delete</a></td>
             </tr>
