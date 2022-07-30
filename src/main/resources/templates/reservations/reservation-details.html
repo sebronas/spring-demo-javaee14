@@ -5,21 +5,18 @@
     <title>Reservation details</title>
 </head>
 <body>
-    <h1>Reservation details</h1>
-    <p> Reservation number: <span th:text="${reservation.getId()}"></span></p>
-    <p> Table number: <span th:text="${reservation.getPhoneNumber()}"></span></p>
-    <p> Table email: <span th:text="${reservation.getEmail()}"></span></p>
-    <p>Start Booking Time: <span th:text="${reservation.getStartBookingTime()}"></span></p>
-    <p>End Booking Time: <span th:text="${reservation.getEndBookingTime()}"></span> </p>
     <p>///////////////////////////////////</p>
     <p>Id: <span th:text="${reservation.id}"></span></p>
     <p>Table Number: <span th:text="${reservation.tableNumber}"></span></p>
-    <p>StartBookingTime: <span th:text="${reservation.startBookingTime}"></span></p>
-    <p>EndBookingTime: <span th:text="${reservation.endBookingTime}"></span></p>
+    <p>Start Booking Time: <span th:text="${reservation.startBookingTime}"></span></p>
+    <p>End Booking Time: <span th:text="${reservation.endBookingTime}"></span></p>
     <p>Surname: <span th:text="${reservation.surname}"></span></p>
-    <p>PhoneNumber: <span th:text="${reservation.phoneNumber}"></span></p>
+    <p>Phone Number: <span th:text="${reservation.phoneNumber}"></span></p>
     <p>Email: <span th:text="${reservation.email}"></span></p>
-    <p>NumberOfPeople: <span th:text="${reservation.numberOfPeople}"></span></p>
+    <p>Number of people: <span th:text="${reservation.numberOfPeople}"></span></p>
     <p>Address: <span th:text="${reservation.address}"></span></p>
+
+    <br>
+    <button><a href="#" th:href="@{/web/reservations}">Back to all reservations</a></button>
 </body>
 </html>
