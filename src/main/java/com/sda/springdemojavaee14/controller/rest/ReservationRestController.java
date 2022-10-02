@@ -48,8 +48,6 @@ public class ReservationRestController {
        /*     ResponseEntity.status(HttpStatus.OK)
                     .body(responseBody);*/
 
-
-
         if (responseBody != null) {
             return ResponseEntity.ok(responseBody);
         } else {
